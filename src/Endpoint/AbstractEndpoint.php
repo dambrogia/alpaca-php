@@ -1,6 +1,8 @@
 <?php
 
-namespace Dambrogia\Alpaca;
+namespace Dambrogia\Alpaca\Endpoint;
+
+use Dambrogia\Alpaca\Client\AbstractClient;
 
 abstract class AbstractEndpoint
 {

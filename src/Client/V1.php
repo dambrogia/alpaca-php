@@ -1,14 +1,13 @@
 <?php
 
-namespace Dambrogia\Alpaca\V1;
+namespace Dambrogia\Alpaca\Client;
 
-use Dambrogia\Alpaca\AbstractClient;
-use Dambrogia\Alpaca\V1\Endpoint\Account;
-use Dambrogia\Alpaca\V1\Endpoint\Assets;
-use Dambrogia\Alpaca\V1\Endpoint\Calendar;
-use Dambrogia\Alpaca\V1\Endpoint\Clock;
-use Dambrogia\Alpaca\V1\Endpoint\Orders;
-use Dambrogia\Alpaca\V1\Endpoint\Positions;
+use Dambrogia\Alpaca\Endpoint\V1\Account;
+use Dambrogia\Alpaca\Endpoint\V1\Assets;
+use Dambrogia\Alpaca\Endpoint\V1\Calendar;
+use Dambrogia\Alpaca\Endpoint\V1\Clock;
+use Dambrogia\Alpaca\Endpoint\V1\Orders;
+use Dambrogia\Alpaca\Endpoint\V1\Positions;
 
 /**
  * This class is used to retrieve all subjects and their endpoints available
@@ -21,7 +20,7 @@ use Dambrogia\Alpaca\V1\Endpoint\Positions;
  * Look into the classes returned from this class for more information.
  */
 
-class Alpaca extends AbstractClient
+class V1 extends AbstractClient
 {
     /**
      * Get the account endpoint class.

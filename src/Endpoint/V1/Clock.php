@@ -1,8 +1,8 @@
 <?php
 
-namespace Dambrogia\Alpaca\V1\Endpoint;
+namespace Dambrogia\Alpaca\Endpoint\V1;
 
-use Dambrogia\Alpaca\AbstractEndpoint;
+use Dambrogia\Alpaca\Endpoint\AbstractEndpoint;
 use GuzzleHttp\Psr7\Response;
 
 class Clock extends AbstractEndpoint

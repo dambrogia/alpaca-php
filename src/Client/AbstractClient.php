@@ -1,9 +1,10 @@
 <?php
 
-namespace Dambrogia\Alpaca;
+namespace Dambrogia\Alpaca\Client;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
+use Dambrogia\Alpaca\Config;
 
 abstract class AbstractClient
 {

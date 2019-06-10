@@ -1,6 +1,6 @@
 <?php
 
-namespace Dambrogia\AlpacaTest\Endpoint;
+namespace Dambrogia\AlpacaTest\Endpoint\V1;
 
 use PHPUnit\Framework\TestCase;
 use Dambrogia\AlpacaTest\CreateClientTrait;

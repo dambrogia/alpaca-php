@@ -2,7 +2,7 @@
 
 namespace Dambrogia\AlpacaTest;
 
-use Dambrogia\Alpaca\V1\Alpaca as V1;
+use Dambrogia\Alpaca\Client\V1;
 
 trait CreateClientTrait
 {

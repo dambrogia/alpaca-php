@@ -60,9 +60,9 @@ abstract class AbstractClient
      * be refactored in the future.
      * This is a possible PSR-18 candidate: https://github.com/fain182/diciotto
      * Zend Dictarios can be used for PSR-17 Response/Requests.
-     * For the mean time this will due. Using the diciotto package with
+     * For the mean time this will do. Using the diciotto package with
      * 16 stars and an unknown vendor who promotes "Prefer a good Developer
-     * eXperience over performance" in thier read me isn't too attractive.
+     * eXperience over performance" in their read me isn't too attractive.
      * @return Client
      */
     private function buildClient(): Client

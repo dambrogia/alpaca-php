@@ -13,7 +13,7 @@ final class AccountTest extends TestCase
     {
         $this->assertEquals(
             200,
-            $this->createV1Client()->account()->get()->getStatusCode()
+            $this->createClient()->v1()->account()->get()->getStatusCode()
         );
     }
 }

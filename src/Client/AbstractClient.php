@@ -8,13 +8,13 @@ use Dambrogia\Alpaca\Config;
 
 abstract class AbstractClient
 {
-    protected $config;
-    protected $client;
+    private $config;
+    private $client;
 
-    public function __construct(Config $config, Client $client = null)
+    public function __construct(Config $config)
     {
         $this->config = $config;
-        $this->client = is_null($client) ? $this->buildClient() : $client;
+        $this->client =  $this->buildClient();
     }
 
     /**
@@ -70,5 +70,21 @@ abstract class AbstractClient
         return new Client([
             'base_uri' => $this->config->getEndpointPrefix()
         ]);
+    }
+
+    /**
+     * Getter method for class property: $this->config.
+     */
+    public function getConfig(): Config
+    {
+        return $this->config;
+    }
+
+    /**
+     * Getter method for class property: $this->client.
+     */
+    public function getClient(): Client
+    {
+        return $this->client;
     }
 }

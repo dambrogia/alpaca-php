@@ -13,6 +13,6 @@ class Account extends AbstractEndpoint
      */
     public function get(): Response
     {
-        return $this->client->request('GET', '/v2/account');
+        return $this->getClient()->request('GET', '/v2/account');
     }
 }

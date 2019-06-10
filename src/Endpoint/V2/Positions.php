@@ -14,7 +14,7 @@ class Positions extends AbstractEndpoint
      */
     public function get(): Response
     {
-        return $this->client->request('GET', '/v2/positions');
+        return $this->getClient()->request('GET', '/v2/positions');
     }
 
     /**
@@ -24,6 +24,6 @@ class Positions extends AbstractEndpoint
      */
     public function getBySymbol(string $symbol): Response
     {
-        return $this->client->request('GET', '/v2/positions/'.$symbol);
+        return $this->getClient()->request('GET', '/v2/positions/'.$symbol);
     }
 }

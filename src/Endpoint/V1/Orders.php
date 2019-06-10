@@ -15,7 +15,7 @@ class Orders extends AbstractEndpoint
     public function get(array $params = []): Response
     {
         $q = $params != [] ? \http_build_query($params) : '';
-        return $this->client->request('GET', '/v1/orders?'.$q);
+        return $this->getClient()->request('GET', '/v1/orders?'.$q);
     }
 
     /**
@@ -25,7 +25,7 @@ class Orders extends AbstractEndpoint
      */
     public function create(array $params = []): Response
     {
-        return $this->client->request('POST', '/v1/orders', $params);
+        return $this->getClient()->request('POST', '/v1/orders', $params);
     }
 
     /**
@@ -35,7 +35,7 @@ class Orders extends AbstractEndpoint
      */
     public function getById($id): Response
     {
-        return $this->client->request('GET', '/v1/orders/'.$id);
+        return $this->getClient()->request('GET', '/v1/orders/'.$id);
     }
 
     /**
@@ -45,7 +45,7 @@ class Orders extends AbstractEndpoint
      */
     public function getByClientOrderId($clientOrderId): Response
     {
-        return $this->client->request('GET', '/v1/orders/'.$clientOrderId);
+        return $this->getClient()->request('GET', '/v1/orders/'.$clientOrderId);
     }
 
     /**
@@ -55,6 +55,6 @@ class Orders extends AbstractEndpoint
      */
     public function delete($id): Response
     {
-        return $this->client->request('DELETE', '/v1/orders/'.$id);
+        return $this->getClient()->request('DELETE', '/v1/orders/'.$id);
     }
 }

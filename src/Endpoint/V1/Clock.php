@@ -13,6 +13,6 @@ class Clock extends AbstractEndpoint
      */
     public function get(): Response
     {
-        return $this->client->request('GET', '/v1/clock');
+        return $this->getClient()->request('GET', '/v1/clock');
     }
 }

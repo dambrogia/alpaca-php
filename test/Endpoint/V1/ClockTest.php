@@ -13,7 +13,7 @@ final class ClockTest extends TestCase
     {
         $this->assertEquals(
             200,
-            $this->createV1Client()->clock()->get()->getStatusCode()
+            $this->createClient()->v1()->clock()->get()->getStatusCode()
         );
     }
 }

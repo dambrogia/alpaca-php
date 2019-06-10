@@ -27,7 +27,7 @@ final class OrdersTest extends TestCase
      */
     private function create(): array
     {
-        $response = $this->createV1Client()->orders()->create([
+        $response = $this->createClient()->v1()->orders()->create([
             'symbol' => 'AGCO',
             'qty' => 1,
             'side' => 'buy',
@@ -47,7 +47,7 @@ final class OrdersTest extends TestCase
      */
     private function readAll()
     {
-        $response = $this->createV1Client()->orders()->get();
+        $response = $this->createClient()->v1()->orders()->get();
         $data = json_decode($response->getBody()->getContents(), true);
         $this->assertTrue(count($data) > 0);
     }
@@ -59,7 +59,7 @@ final class OrdersTest extends TestCase
      */
     private function readById(string $id)
     {
-        $response = $this->createV1Client()->orders()->getById($id);
+        $response = $this->createClient()->v1()->orders()->getById($id);
         $data = json_decode($response->getBody()->getContents(), true);
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertEquals($id, $data['id']);
@@ -72,7 +72,7 @@ final class OrdersTest extends TestCase
      */
     private function readByClientOrderId(string $clientOrderId)
     {
-        $response = $this->createV1Client()->orders()->getByClientOrderId($clientOrderId);
+        $response = $this->createClient()->v1()->orders()->getByClientOrderId($clientOrderId);
         $data = json_decode($response->getBody()->getContents(), true);
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertEquals($clientOrderId, $data['client_order_id']);
@@ -85,7 +85,7 @@ final class OrdersTest extends TestCase
      */
     private function delete(string $id)
     {
-        $response = $this->createV1Client()->orders()->delete($id);
+        $response = $this->createClient()->v1()->orders()->delete($id);
         // 204 (deleted) and 422 (not deletable) are acceptable. 404 is not.
         $this->assertTrue(in_array($response->getStatusCode(), [422, 204]));
     }

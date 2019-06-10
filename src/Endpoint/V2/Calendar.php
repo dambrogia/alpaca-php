@@ -13,6 +13,6 @@ class Calendar extends AbstractEndpoint
      */
     public function get(): Response
     {
-        return $this->client->request('GET', '/v2/calendar');
+        return $this->getClient()->request('GET', '/v2/calendar');
     }
 }

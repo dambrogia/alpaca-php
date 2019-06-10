@@ -21,7 +21,7 @@ final class PositionsTest extends TestCase
      */
     private function getAll()
     {
-        $response = $this->createV2Client()->positions()->get();
+        $response = $this->createClient()->v2()->positions()->get();
         $this->assertEquals(200, $response->getStatusCode());
 
         return json_decode($response->getBody()->getContents(), true);
@@ -36,7 +36,7 @@ final class PositionsTest extends TestCase
     public function getOne(array $positions)
     {
         if (! empty($positions)) {
-            $response = $this->createV2Client()
+            $response = $this->createClient()->v2()
                 ->positions()
                 ->getBySymbol($positions[0]['symbol']);
 

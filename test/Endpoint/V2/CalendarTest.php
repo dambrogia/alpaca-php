@@ -13,7 +13,7 @@ final class CalendarTest extends TestCase
     {
         $this->assertEquals(
             200,
-            $this->createV2Client()->calendar()->get()->getStatusCode()
+            $this->createClient()->v2()->calendar()->get()->getStatusCode()
         );
     }
 }

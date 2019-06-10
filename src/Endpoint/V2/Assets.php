@@ -14,7 +14,7 @@ class Assets extends AbstractEndpoint
     public function get(array $params = []): Response
     {
         $q = $params != [] ? http_build_query($params) : '';
-        return $this->client->request('GET', '/v2/assets?'.$q);
+        return $this->getClient()->request('GET', '/v2/assets?'.$q);
     }
 
     /**
@@ -24,7 +24,7 @@ class Assets extends AbstractEndpoint
      */
     public function getById(string $id): Response
     {
-        return $this->client->request('GET', '/v2/assets/'.$id);
+        return $this->getClient()->request('GET', '/v2/assets/'.$id);
     }
 
     /**
@@ -34,6 +34,6 @@ class Assets extends AbstractEndpoint
      */
     public function getBySymbol(string $symbol): Response
     {
-        return $this->client->request('GET', '/v2/assets/'.$symbol);
+        return $this->getClient()->request('GET', '/v2/assets/'.$symbol);
     }
 }

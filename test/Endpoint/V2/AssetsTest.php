@@ -41,7 +41,7 @@ final class AssetsTest extends TestCase
      */
     private function getAll(): array
     {
-        $response = $this->createV2Client()->assets()->get(['status' => 'active']);
+        $response = $this->createClient()->v2()->assets()->get(['status' => 'active']);
 
         $this->assertEquals(200, $response->getStatusCode());
 
@@ -55,7 +55,7 @@ final class AssetsTest extends TestCase
      */
     public function getBySymbol(string $symbol): void
     {
-        $status = $this->createV2Client()
+        $status = $this->createClient()->v2()
             ->assets()
             ->getBySymbol($symbol)
             ->getStatusCode();
@@ -65,7 +65,7 @@ final class AssetsTest extends TestCase
 
     public function getById(string $id): void
     {
-        $status = $this->createV2Client()
+        $status = $this->createClient()->v2()
             ->assets()
             ->getById($id)
             ->getStatusCode();

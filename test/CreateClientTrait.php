@@ -2,20 +2,14 @@
 
 namespace Dambrogia\AlpacaTest;
 
-use Dambrogia\Alpaca\Client\V1;
-use Dambrogia\Alpaca\Client\V2;
+use Dambrogia\Alpaca\Alpaca;
 
 trait CreateClientTrait
 {
     use CreateConfigTrait;
 
-    public function createV1Client(): V1
+    public function createClient(): Alpaca
     {
-        return new V1($this->createConfig());
-    }
-
-    public function createV2Client(): V2
-    {
-        return new V2($this->createConfig());
+        return new Alpaca($this->createConfig());
     }
 }

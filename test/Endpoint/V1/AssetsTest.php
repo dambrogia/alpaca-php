@@ -21,7 +21,7 @@ final class AssetsTest extends TestCase
      */
     private function getAll(): array
     {
-        $response = $this->createV1Client()->assets()->get(['status' => 'active']);
+        $response = $this->createClient()->v1()->assets()->get(['status' => 'active']);
 
         $this->assertEquals(200, $response->getStatusCode());
 
@@ -44,7 +44,7 @@ final class AssetsTest extends TestCase
             }
         }
 
-        $response = $this->createV1Client()->assets()->getBySymbol($symbol);
+        $response = $this->createClient()->v1()->assets()->getBySymbol($symbol);
 
         $this->assertEquals(200, $response->getStatusCode());
     }

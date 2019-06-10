@@ -34,13 +34,17 @@ class Alpaca
 
     /**
      * Get access to streaming websocket.
-     * @return void
+     * @throws \Exception
      */
     public function streaming()
     {
-        throw new \Exception('Not yet implement');
+        throw new \Exception('Not yet implemented.');
     }
 
+    /**
+     * Get access to market data.
+     * @throws \Exception
+     */
     public function marketData()
     {
         throw new \Exception('Not yet implemented.');

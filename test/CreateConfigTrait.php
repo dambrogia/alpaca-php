@@ -10,8 +10,8 @@ trait CreateConfigTrait
     {
         // @todo - implement dotenv for thest values. throw exception during
         // test if they don't exist.
-        $key = empty($key) ? 'key' : $key;
-        $secret = empty($secret) ? 'secret' : $secret;
+        $key = empty($key) ? 'PKOGCMHJNFJ6J3PRX9B7' : $key;
+        $secret = empty($secret) ? 'qQDCH9xabxm0jCjDaKVFyFajcal3hafgUjCjQ0X9' : $secret;
 
         return new Config($key, $secret, $env);
     }

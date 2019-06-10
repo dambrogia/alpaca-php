@@ -5,6 +5,7 @@ namespace Dambrogia\Alpaca\V1;
 use Dambrogia\Alpaca\AbstractClient;
 use Dambrogia\Alpaca\V1\Endpoint\Account;
 use Dambrogia\Alpaca\V1\Endpoint\Assets;
+use Dambrogia\Alpaca\V1\Endpoint\Calendar;
 use Dambrogia\Alpaca\V1\Endpoint\Clock;
 use Dambrogia\Alpaca\V1\Endpoint\Orders;
 
@@ -49,7 +50,16 @@ class Alpaca extends AbstractClient
     }
 
     /**
-     * Get the Orders endpoint class.
+     * Get the Calendar endpoint class.
+     * @return Calendar
+     */
+    public function calendar(): Calendar
+    {
+        return new Calendar($this);
+    }
+
+    /**
+     * Get the Clock endpoint class.
      * @return Clock
      */
     public function clock(): Clock

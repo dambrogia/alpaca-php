@@ -12,7 +12,7 @@ class Config
 
     const DOMAIN_PAPER = 'https://paper-api.alpaca.markets/';
     const DOMAIN_LIVE = 'https://api.alpaca.markets/';
-    const DOMAIN_ENV_VAR = 'ALPACA_ENV';
+
     const ENV_PAPER = 'paper';
     const ENV_LIVE = 'live';
 

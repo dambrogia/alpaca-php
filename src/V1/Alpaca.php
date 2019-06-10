@@ -8,6 +8,7 @@ use Dambrogia\Alpaca\V1\Endpoint\Assets;
 use Dambrogia\Alpaca\V1\Endpoint\Calendar;
 use Dambrogia\Alpaca\V1\Endpoint\Clock;
 use Dambrogia\Alpaca\V1\Endpoint\Orders;
+use Dambrogia\Alpaca\V1\Endpoint\Positions;
 
 /**
  * This class is used to retrieve all subjects and their endpoints available
@@ -29,15 +30,6 @@ class Alpaca extends AbstractClient
     public function account(): Account
     {
         return new Account($this);
-    }
-
-    /**
-     * Get the Orders endpoint class.
-     * @return Orders
-     */
-    public function orders(): Orders
-    {
-        return new Orders($this);
     }
 
     /**
@@ -65,5 +57,23 @@ class Alpaca extends AbstractClient
     public function clock(): Clock
     {
         return new Clock($this);
+    }
+
+    /**
+     * Get the Orders endpoint class.
+     * @return Orders
+     */
+    public function orders(): Orders
+    {
+        return new Orders($this);
+    }
+
+    /**
+     * Get the Positions endpoint class.
+     * @return Positions
+     */
+    public function positions(): Positions
+    {
+        return new Positions($this);
     }
 }

@@ -43,6 +43,11 @@ class Config
     }
 
     /**
+     * Get stream endpoint prefix.
+     * Substitute the
+     */
+
+    /**
      * Getter method for class property: $this->keyId.
      * @return string
      */

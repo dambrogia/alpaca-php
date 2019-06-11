@@ -4,6 +4,7 @@ namespace Dambrogia\Alpaca;
 
 use Dambrogia\Alpaca\Client\V1;
 use Dambrogia\Alpaca\Client\V2;
+use Dambrogia\Alpaca\Client\Streaming;
 
 class Alpaca
 {
@@ -38,7 +39,7 @@ class Alpaca
      */
     public function streaming()
     {
-        throw new \Exception('Not yet implemented.');
+        return new Streaming($this->config);
     }
 
     /**

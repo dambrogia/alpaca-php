@@ -68,7 +68,7 @@ abstract class AbstractClient
     private function buildClient(): Client
     {
         return new Client([
-            'base_uri' => $this->config->getEndpointPrefix()
+            'base_uri' => $this->config->getEndpointPrefix() . '/'
         ]);
     }
 

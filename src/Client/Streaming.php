@@ -13,7 +13,6 @@ use function Ratchet\Client\connect;
 class Streaming
 {
     private $config;
-    private $connection;
 
     public function __construct(Config $config)
     {
@@ -27,7 +26,7 @@ class Streaming
      * @param Callable $failure
      * @return Promise
      */
-    public function connect(array $streams = [], callable $succeed = null, callable $fail = null): Promise
+    public function connect(array $streams, callable $succeed, callable $fail): Promise
     {
         $prefix = $this->config->getEndpointPrefix();
         $endpoint = str_replace('http', 'ws', $prefix) . 'stream';

@@ -45,7 +45,8 @@ class Orders extends AbstractEndpoint
      */
     public function getByClientOrderId($clientOrderId): Response
     {
-        return $this->getClient()->request('GET', '/v2/orders/'.$clientOrderId);
+        $q = http_build_query(['client_order_id' => $clientOrderId]);
+        return $this->getClient()->request('GET', '/v2/orders:by_client_order_id?'.$q);
     }
 
     /**

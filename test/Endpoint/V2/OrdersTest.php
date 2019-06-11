@@ -16,7 +16,7 @@ final class OrdersTest extends TestCase
         // Read.
         $this->readAll();
         $this->readById($responseData['id']);
-        // @todo - not working. $this->readByClientOrderId($responseData['client_order_id']);
+        $this->readByClientOrderId($responseData['client_order_id']);
         // No update functions available.
         // Delete.
         $this->delete($responseData['id']);
@@ -41,15 +41,13 @@ final class OrdersTest extends TestCase
     }
 
     /**
-     * Fetch all orders. At least one should exist since one is created
-     * before this function is run.
+     * Assert 200 response.
      * @return void
      */
     private function readAll()
     {
         $response = $this->createClient()->v2()->orders()->get();
-        $data = json_decode($response->getBody()->getContents(), true);
-        $this->assertTrue(count($data) > 0);
+        $this->assertEquals(200, $response->getStatusCode());
     }
 
     /**

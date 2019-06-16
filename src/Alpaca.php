@@ -5,6 +5,7 @@ namespace Dambrogia\Alpaca;
 use Dambrogia\Alpaca\Client\V1;
 use Dambrogia\Alpaca\Client\V2;
 use Dambrogia\Alpaca\Client\Streaming;
+use Dambrogia\Alpaca\Client\MarketData;
 
 class Alpaca
 {
@@ -35,7 +36,7 @@ class Alpaca
 
     /**
      * Get access to streaming websocket.
-     * @throws \Exception
+     * @return Streaming
      */
     public function streaming()
     {
@@ -43,11 +44,11 @@ class Alpaca
     }
 
     /**
-     * Get access to market data.
-     * @throws \Exception
+     * Get access to market data cleint.
+     * @return MarketData
      */
     public function marketData()
     {
-        throw new \Exception('Not yet implemented.');
+        return new MarketData($this->config);
     }
 }

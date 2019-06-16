@@ -4,6 +4,7 @@ namespace Dambrogia\Alpaca\Client;
 
 use Dambrogia\Alpaca\Endpoint\V1\Account;
 use Dambrogia\Alpaca\Endpoint\V1\Assets;
+use Dambrogia\Alpaca\Endpoint\V1\Bars;
 use Dambrogia\Alpaca\Endpoint\V1\Calendar;
 use Dambrogia\Alpaca\Endpoint\V1\Clock;
 use Dambrogia\Alpaca\Endpoint\V1\Orders;
@@ -38,6 +39,14 @@ class V1 extends AbstractClient
     public function assets(): Assets
     {
         return new Assets($this);
+    }
+    /**
+     * Get the Bars endpoint class.
+     * @return Assets
+     */
+    public function bars(): Bars
+    {
+        return new Bars($this);
     }
 
     /**

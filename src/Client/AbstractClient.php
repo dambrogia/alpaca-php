@@ -65,7 +65,7 @@ abstract class AbstractClient
      * eXperience over performance" in their read me isn't too attractive.
      * @return Client
      */
-    private function buildClient(): Client
+    protected function buildClient(): Client
     {
         return new Client([
             'base_uri' => $this->config->getEndpointPrefix() . '/'

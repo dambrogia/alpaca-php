@@ -44,6 +44,8 @@ final class StreamTest extends TestCase
     {
         return function (\Exception $e) {
             echo "Could not connect: {$e->getMessage()}\n";
+            // If this hits we're not good.
+            $this->assertTrue(false);
         };
     }
 }

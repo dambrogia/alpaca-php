@@ -12,6 +12,7 @@ class Config
 
     const DOMAIN_PAPER = 'https://paper-api.alpaca.markets/';
     const DOMAIN_LIVE = 'https://api.alpaca.markets/';
+    const DOMAIN_MARKET_DATA = 'https://data.alpaca.markets/';
 
     const ENV_PAPER = 'paper';
     const ENV_LIVE = 'live';
@@ -43,9 +44,13 @@ class Config
     }
 
     /**
-     * Get stream endpoint prefix.
-     * Substitute the
+     * Get the market data endpoint domain/prefix.
+     * @return string
      */
+    public function getMarketDataPrefix(): string
+    {
+        return self::DOMAIN_MARKET_DATA;
+    }
 
     /**
      * Getter method for class property: $this->keyId.

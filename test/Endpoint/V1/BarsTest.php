@@ -17,4 +17,13 @@ final class BarsTest extends TestCase
 
         $this->assertEquals(200, $status);
     }
+
+    public function testResponse(): void
+    {
+        $params = ['symbols' => 'AAN'];
+        $response = $this->createClient()->marketData()->bars()->get('day', $params);
+        $data = $response->data();
+
+        $this->assertEquals(true, (bool) is_array($data));
+    }
 }

@@ -3,7 +3,6 @@
 namespace Dambrogia\Alpaca\Client;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Response;
 use Dambrogia\Alpaca\Config;
 
 abstract class AbstractClient
@@ -34,9 +33,10 @@ abstract class AbstractClient
         }
 
         try {
-            return $this->client->request($verb, $endpoint, $data);
+            return new Response(
+                $this->client->request($verb, $endpoint, $data)
+            );
         } catch (\Exception $e) {
-            // $this->handleException($e);
             throw $e;
         }
     }

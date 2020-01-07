@@ -3,7 +3,7 @@
 namespace Dambrogia\Alpaca\Endpoint\V2;
 
 use Dambrogia\Alpaca\Endpoint\AbstractEndpoint;
-use GuzzleHttp\Psr7\Response;
+use Dambrogia\Alpaca\Client\Response;
 
 class Orders extends AbstractEndpoint
 {

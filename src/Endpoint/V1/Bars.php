@@ -4,7 +4,7 @@ namespace Dambrogia\Alpaca\Endpoint\V1;
 
 use Dambrogia\Alpaca\Endpoint\AbstractEndpoint;
 use Dambrogia\Alpaca\Concern\EndpointException;
-use GuzzleHttp\Psr7\Response;
+use Dambrogia\Alpaca\Client\Response;
 
 class Bars extends AbstractEndpoint
 {
